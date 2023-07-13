@@ -1,4 +1,5 @@
-#include<stdio.h>/**
+#include<stdio.h>
+/**
  * main - print "with proper grammar, but the outcome is
  * a piece of art," followed newline
  * Return: Always 0.
