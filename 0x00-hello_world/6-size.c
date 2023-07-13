@@ -1,8 +1,8 @@
 #include<stdio.h>
 /**
- * main -prints the size of various types on the computer it is compiled and run on
- * the computer is compiled  and run on..
- * return: always 0.
+ * main -entry point
+ 
+ * return: always 0.(seccess)
  */
 int main(void)
 {
