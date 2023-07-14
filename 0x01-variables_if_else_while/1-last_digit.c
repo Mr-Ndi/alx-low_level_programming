@@ -2,12 +2,9 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * main - Get last digit of a number by
- * modulas and return answer depend on the.
- * last number example :
- * if the Last digit of a number is 5 the out put must be.
- * :is greater than 5
- * return : always zero
+ * main - Entre point.
+ * Description:getting the last digit.
+ * Return: always 0indicating successful execution.
  */
 int main(void)
 {
