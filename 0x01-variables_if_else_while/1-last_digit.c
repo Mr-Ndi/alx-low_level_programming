@@ -5,9 +5,9 @@
  * main - entry piont
  * description: 'get last digit of a number and return answer depend on the.
  * last number example :
- * Last digit of -729688197 is -7 and is less than 6 and not 0'
+ * if the Last digit of a number is 5 the out put must be :is greater than 5
  * return : always zero
- * */
+ */
 int main(void)
 {
 	int n;
