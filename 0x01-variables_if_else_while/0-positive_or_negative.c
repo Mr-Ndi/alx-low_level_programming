@@ -5,7 +5,9 @@
 /**
  * main - Entry point
  *
- * Description: Prints whether a randomly generated number is positive, zero, or negative.
+ * Description: Prints whether a randomly generated 
+ *
+ * number is positive, zero, or negative.
  *
  * Return: Always 0 (Success)
  */
