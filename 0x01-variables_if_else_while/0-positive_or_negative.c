@@ -5,7 +5,7 @@
 /**
  * main - Entry point
  *
- * Description: Prints whether a randomly generated 
+ * Description: Prints whether a randomly generated.
  *
  * number is positive, zero, or negative.
  *
