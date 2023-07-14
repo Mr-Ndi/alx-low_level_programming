@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * main function is the main entry
- * thrn return is always zero
+ * main -Entry point
+ * Return: alwaays 0.
  */
 int main(void)
 {
