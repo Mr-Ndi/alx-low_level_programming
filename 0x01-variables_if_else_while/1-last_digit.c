@@ -1,14 +1,18 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* more headers goes there */
-
-/* betty style doc for function main goes there */
+/**
+ * main - entry piont
+ * description: 'get last digit of a number and return answer depend on the.
+ * last number example :
+ * Last digit of -729688197 is -7 and is less than 6 and not 0'
+ * return : always zero
+ * */
 int main(void)
 {
 	int n;
 	int k;
-	
+
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	k = n % 10;
