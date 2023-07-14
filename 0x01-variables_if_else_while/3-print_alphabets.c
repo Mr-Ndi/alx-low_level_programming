@@ -8,12 +8,12 @@ int main(void)
 int p = 65;
 int k = 97;
 
-while (k < 122)
+while (k <= 122)
 {
 putchar(k);
 k++;
 }
-while (p < 90)
+while (p <= 90)
 {
 putchar(p);
 p++;
