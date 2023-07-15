@@ -1,6 +1,6 @@
 #include<stdio.h>
 /**
- * main cpn wabibonye ko comment doesn't matter
+ * main -Entry point
  * Return: always 0.
  */
 int main(void)
@@ -11,7 +11,7 @@ for (p = 48; p <= 57; p++)
 {
 putchar(p);
 }
-for (k =97; k <= 102; k++)
+for (k = 97; k <= 102; k++)
 {
 putchar(k);
 }
