@@ -5,35 +5,19 @@
  */
 int main(void)
 {
-int a = '0';
-int x = '0';
-int z = '0';
+int p, k;
 
-while (a < '7')
+for (p = 0; p < 9; p++)
 {
-while (x < '8')
+for (k = p + 1; k < 10; k++)
 {
-while (z < '9')
-{
-if (a < x && x < z)
-{
-putchar(a);
-putchar(x);
-putchar(z);
-if (!(a == '7' && x == '8' && z == '9'))
-{
+putchar((p % 10) + '0');
+putchar((k % 10) + '0');
+if (p == 0 && k == 9)
+continue;
 putchar(',');
 putchar(' ');
 }
 }
-z++;
-}
-z = '0';
-x++;
-}
-x = '0';
-a++;
-}
-putchar('\n');
 return (0);
 }
