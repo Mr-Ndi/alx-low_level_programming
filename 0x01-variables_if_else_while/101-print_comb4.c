@@ -1,22 +1,34 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 /**
- * main cpn wabibonye ko comment doesn't matter
- * Return: always 0.
+ * main - Entry point
+ * Return: Always 0.
  */
 int main(void)
 {
-int i;
-int j;
+ int q, w, e;
 
-for (i = 0; i < 99; i++)
+for (q = 0; q < 9; q++)
 {
-for(j = 0; j < 99; j++)
+for (w = q + 1; w <= 9; w++)
 {
-if (i < j && i != j)
+for (e = w + 1; e <= 9; e++)
 {
-
+if ((w != q) && !(e))
+{
+printf("%c", '0' + q);
+printf("%c", '0' + w);
+printf("%c", '0' + e);
+if (q == 7 && w == 8)
+continue;
+putchar(',');
+putchar(' ');
 }
 }
 }
+}
+putchar('\n');
 return (0);
 }
