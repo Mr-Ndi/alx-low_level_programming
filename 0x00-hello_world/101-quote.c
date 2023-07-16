@@ -1,13 +1,18 @@
-#include<stdio.h>
+#include <unistd.h>
 
-/** main -prints "and that piece of art is useful"  - Dora Korpar, 2015-10-19"
- * following by a new line to standard error.
- * return: always 1.
+/**
+ * main - Entry point
+ * Return: Always it must work
  */
 
-
 int main(void)
-
 {
-	write(2,"and that piece of art is useful\"  - Dora Korpar, 2015-10-19\n",59);
-	return(1);
+	const char message[50];
+
+	message[50] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	const int len = sizeof(message) - 1;
+
+	write(STDERR_FILENO, message, len);
+
+	return (1);
+}
