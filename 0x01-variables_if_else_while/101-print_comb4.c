@@ -10,25 +10,22 @@ int main(void)
 {
 int q, w, e;
 
-for (q = 0; q < 9; q++)
+for (q = 0; q <= 7; q++)
 {
-for (w = q + 1; w <= 9; w++)
+for (w = q + 1; w <= 8; w++)
 {
-for (e = w + 1; e <= 9; e++)
+for (e == w + 1; e <= 9; e++)
 {
-if ((w != q) && !(e))
+putchar (q, '0');
+putchar (w' '0');
+putchar (e, '0');
+if ( !(q == 7 || w == 8 || e == 9))
 {
-printf("%c", '0' + q);
-printf("%c", '0' + w);
-printf("%c", '0' + e);
-if (q == 7 && w == 8)
-continue;
-putchar(',');
-putchar(' ');
+putchar (', ');
+putchar (' ');
 }
 }
 }
 }
-putchar('\n');
+putchar ('\n');
 return (0);
-}
