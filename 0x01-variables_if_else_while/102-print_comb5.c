@@ -17,7 +17,7 @@ putchar(q / 10 + '0');
 putchar(q % 10 + '0');
 putchar(' ');
 putchar(w / 10 + '0');
-putchar(q % 10 + '0');
+putchar(w % 10 + '0');
 if (!(q == 98 && w == 99))
 {
 putchar(',');
