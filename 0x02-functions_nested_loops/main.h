@@ -4,7 +4,7 @@ void print_alphabet_x10(void);
 int islower(int c);
 int isalpha(int c);
 int print_sign(int n);
-int abs(int);
+int _abs(int);
 int print_last_digit(int);
 int jack_bauver(void);
 void time_table(void);
