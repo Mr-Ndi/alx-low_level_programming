@@ -17,5 +17,5 @@ while (s[index] != '\0')
 index++;
 }
 
-return index;
+return (index);
 }
