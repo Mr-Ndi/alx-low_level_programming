@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/**
+ * main - Entry point of the program
+ *
+ * Description: This function initializes an array, manipulates it using a
+ * pointer, and prints the result.
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 int n;
