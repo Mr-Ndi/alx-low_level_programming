@@ -8,7 +8,7 @@
  * @argc: argument count
  * @argv: argument vector
  *
- * return: zero if no argument, 1 for wrong input
+ * Return: zero if no argument, 1 for wrong input
  */
 
 int main(int argc, char *argv[])
