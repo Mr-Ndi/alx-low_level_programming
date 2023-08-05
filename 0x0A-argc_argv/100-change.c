@@ -7,6 +7,10 @@
  * to make change for an amount of money
  * @argc: argument counter
  * @argv: argument vector
+ *
+ * Return:zero if numbers are negetive
+ * or 1 if the number of arguments
+ * passed to is not exactly
  */
 
 int main(int argc, char *argv[])
