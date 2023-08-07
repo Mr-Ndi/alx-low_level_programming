@@ -17,14 +17,14 @@ char *q;
 if (str == NULL)
 return (NULL);
 
-while(str[i])
+while (str[i])
 {
 i++;
 }
-q = malloc((sizeof(char) * i) + 1);
+q = malloc((sizeof(char) * i) +1);
 if (str == NULL)
 return (NULL);
-while(a < i)
+while (a < i)
 {
 q[a] = str[a];
 a++;
