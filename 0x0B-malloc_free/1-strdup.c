@@ -21,8 +21,8 @@ while (str[i])
 {
 i++;
 }
-q = malloc((sizeof(char) * i) +1);
-if (str == NULL)
+q = malloc((sizeof(char) * i) + 1);
+if (q == NULL)
 return (NULL);
 while (a < i)
 {
