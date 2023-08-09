@@ -16,8 +16,8 @@ int q = 0, w = 0, e = 0, r = 0;
 char *y;
 
 if (ac == 0 || av == NULL)
-
 return (NULL);
+
 while (w < ac)
 {
 while (av[w][e])
@@ -28,7 +28,7 @@ e++;
 e = 0;
 w++;
 }
-y = malloc((sizeof(char) * q) + ac + 1);
+y = malloc(sizeof(char) * q + 1);
 w = 0;
 while (av[w])
 {
