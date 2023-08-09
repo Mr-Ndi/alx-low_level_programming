@@ -28,7 +28,8 @@ e++;
 e = 0;
 w++;
 }
-y = malloc(sizeof(char) * q + 1);
+y = malloc(sizeof(char) * q + ac + 1);
+
 w = 0;
 while (av[w])
 {
