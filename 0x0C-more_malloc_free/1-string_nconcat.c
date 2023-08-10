@@ -33,6 +33,10 @@ if (n >= len2)
 n = len2;
 
 str = malloc(len1 + n + 1);
+
+if (str == NULL)
+return (NULL);
+
 for (i = 0; i < len1; i++)
 str[i] = s1[i];
 
