@@ -1,13 +1,11 @@
 #include <stdio.h>
-
- /**
- * main - entry point 
- *
- * Return: 0 success
+/**
+ * main - man entry of the program
+ * FILE: the name of the file
+ *Return: the name of the file
  */
-
 int main(void)
 {
-	printf("%s\n", __FILE__);
-	return (0);
+printf("%s\n", __FILE__);
+return (0);
 }
