@@ -1,11 +1,12 @@
 # include <stdio.h>
 
-`/**
- * main - a function to prints the name of the file it
- *  was compiled from, followed by a new line
+ /**
+ * main - entry point 
+ *
+ * Return: 0 success
  */
 
-int main(viod)
+int main()
 {
 printf("%s\n", __FILE__);
 return (0);
