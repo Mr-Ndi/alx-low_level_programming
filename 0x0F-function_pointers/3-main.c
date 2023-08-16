@@ -18,7 +18,7 @@ char *ndi;
 if (argc != 4)
 {
 printf("Error\n");
-exit (98);
+exit(98);
 }
 po = atoi(argv[1]);
 li = atoi(argv[3]);
