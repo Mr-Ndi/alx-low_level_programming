@@ -3,7 +3,6 @@
 
 /**
  * print_listint - function to return numbeer of node
- * @listint_t: number of element in a list
  * @h:pointer to the first element of a list
  *
  * Return: number of elements
