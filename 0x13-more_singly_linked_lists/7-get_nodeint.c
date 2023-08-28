@@ -13,8 +13,9 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 	unsigned int k;
 	listint_t *poli;
-	
+
 	poli = head;
+
 	for (k = 0; poli != NULL && k < index; k++)
 	{
 		poli = poli->next;
