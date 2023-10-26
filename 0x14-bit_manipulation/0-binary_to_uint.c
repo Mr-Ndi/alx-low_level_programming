@@ -2,7 +2,7 @@
 # include "main.h"
 
 /**
- * unsigned int binary_to_uint - converts a binary number to an integer
+ * binary_to_uint - converts a binary number to an integer
  * @b: pointing to a string of 0 and 1 chars
  *
  * Return: if there is one or more chars in the string b that is not 0 or 1
