@@ -3,7 +3,7 @@
 /**
  * read_textfile - Reads a text file and prints it to the POSIX standard output
  * @filename: Pointer to the file name
- * @letters: Number of letters to read and print
+ * @letters: Number of letters it should read and print
  *
  * Return: The actual number of letters it could read and print
  *         0 if the file cannot be opened or read, filename is NULL,
