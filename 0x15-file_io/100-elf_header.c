@@ -18,35 +18,38 @@ void display_error(char *message)
  * display_elf_header - Display information from the ELF header of a file.
  * @filename: The name of our ELF file.
  */
+
 void display_elf_header(char *filename)
 {
-	int fd = open(filename, O_RDONLY), i = 0;
+    int fd, i = 0;
+    Elf64_Ehdr elf_header;
 
-	if (fd == -1)
-		display_error("Error: Unable to open ELF file");
+    fd = open(filename, O_RDONLY);
 
-	Elf64_Ehdr elf_header;
-	if (read(fd, &elf_header, sizeof(Elf64_Ehdr)) != sizeof(Elf64_Ehdr))
-		display_error("Error: Unable to read ELF header");
+    if (fd == -1)
+        display_error("Error: Unable to open ELF file");
 
-	close(fd);
+    if (read(fd, &elf_header, sizeof(Elf64_Ehdr)) != sizeof(Elf64_Ehdr))
+        display_error("Error: Unable to read ELF header");
 
-	printf("ELF Header:\n");
-	printf("  Magic:   ");
-	while (i < EI_NIDENT)
-		{
-			printf("%02x ", elf_header.e_ident[i]);
-			i++;
-		}
-	printf("\n");
+    close(fd);
 
-	printf("  Class:                             ELF%d\n", elf_header.e_ident[EI_CLASS] == ELFCLASS64 ? 64 : 32);
-	printf("  Data:                              %s\n", elf_header.e_ident[EI_DATA] == ELFDATA2LSB ? "2's complement, little endian" : "Invalid data encoding");
-	printf("  Version:                           %d (current)\n", elf_header.e_ident[EI_VERSION]);
-	printf("  OS/ABI:                            UNIX - System V\n");
-	printf("  ABI Version:                       %d\n", elf_header.e_ident[EI_ABIVERSION]);
-	printf("  Type:                              %s\n", elf_header.e_type == ET_EXEC ? "EXEC (Executable file)" : "Invalid type");
-	printf("  Entry point address:               0x%lx\n", (unsigned long)elf_header.e_entry);
+    printf("ELF Header:\n");
+    printf("  Magic:   ");
+    while (i < EI_NIDENT)
+    {
+        printf("%02x ", elf_header.e_ident[i]);
+        i++;
+    }
+    printf("\n");
+
+    printf("  Class:                             ELF%d\n", elf_header.e_ident[EI_CLASS] == ELFCLASS64 ? 64 : 32);
+    printf("  Data:                              %s\n", elf_header.e_ident[EI_DATA] == ELFDATA2LSB ? "2's complement, little endian" : "Invalid data encoding");
+    printf("  Version:                           %d (current)\n", elf_header.e_ident[EI_VERSION]);
+    printf("  OS/ABI:                            UNIX - System V\n");
+    printf("  ABI Version:                       %d\n", elf_header.e_ident[EI_ABIVERSION]);
+    printf("  Type:                              %s\n", elf_header.e_type == ET_EXEC ? "EXEC (Executable file)" : "Invalid type");
+    printf("  Entry point address:               0x%lx\n", (unsigned long)elf_header.e_entry);
 }
 
 /**
