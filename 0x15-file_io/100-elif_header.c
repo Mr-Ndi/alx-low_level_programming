@@ -20,7 +20,7 @@ void display_error(char *message)
  */
 void display_elf_header(char *filename)
 {
-	int fd = open(filename, O_RDONLY), i;
+	int fd = open(filename, O_RDONLY), i = 0;
 
 	if (fd == -1)
 		display_error("Error: Unable to open ELF file");
@@ -33,8 +33,11 @@ void display_elf_header(char *filename)
 
 	printf("ELF Header:\n");
 	printf("  Magic:   ");
-	for (i = 0; i < EI_NIDENT; ++i)
-		printf("%02x ", elf_header.e_ident[i]);
+	while (i < EI_NIDENT)
+		{
+			printf("%02x ", elf_header.e_ident[i]);
+			i++;
+		}
 	printf("\n");
 
 	printf("  Class:                             ELF%d\n", elf_header.e_ident[EI_CLASS] == ELFCLASS64 ? 64 : 32);
