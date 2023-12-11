@@ -1,0 +1,130 @@
+
+;; Function main (main, funcdef_no=6, decl_uid=3722, cgraph_uid=7, symbol_order=6)
+
+
+3 basic blocks, 2 edges.
+;; basic block 0, loop depth 0, maybe hot
+;;  prev block (nil), next block 2, flags: (RTL)
+;;  pred:      
+;;  succ:       2 (FALLTHRU)
+
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL, VISITED)
+;;  pred:       ENTRY (FALLTHRU)
+(note 3 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:DI 85)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f0ebf26b2d0 *.LC0>)) "0-main.c":12:5 82 {*movdi_internal}
+     (nil))
+(insn 6 5 7 2 (set (reg:DI 5 di)
+        (reg:DI 85)) "0-main.c":12:5 82 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f0ebf26b2d0 *.LC0>)
+        (nil)))
+(call_insn 7 6 8 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("_strlen") [flags 0x41]  <function_decl 0x7f0ebf5ade00 _strlen>) [0 _strlen S1 A8])
+            (const_int 0 [0]))) "0-main.c":12:5 1013 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 8 7 9 2 (set (reg:SI 82 [ _1 ])
+        (reg:SI 0 ax)) "0-main.c":12:5 83 {*movsi_internal}
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 4 si)
+        (reg:SI 82 [ _1 ])) "0-main.c":12:5 discrim 1 83 {*movsi_internal}
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 86)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f0ebf26b360 *.LC1>)) "0-main.c":12:5 discrim 1 82 {*movdi_internal}
+     (nil))
+(insn 11 10 12 2 (set (reg:DI 5 di)
+        (reg:DI 86)) "0-main.c":12:5 discrim 1 82 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f0ebf26b360 *.LC1>)
+        (nil)))
+(insn 12 11 13 2 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "0-main.c":12:5 discrim 1 85 {*movqi_internal}
+     (nil))
+(call_insn 13 12 14 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f0ebf52fa00 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "0-main.c":12:5 discrim 1 1013 {*call_value}
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (nil)))))
+(insn 14 13 17 2 (set (reg:SI 83 [ _5 ])
+        (const_int 0 [0])) "0-main.c":13:12 83 {*movsi_internal}
+     (nil))
+(insn 17 14 21 2 (set (reg:SI 84 [ <retval> ])
+        (reg:SI 83 [ _5 ])) "0-main.c":14:1 83 {*movsi_internal}
+     (nil))
+(insn 21 17 22 2 (set (reg/i:SI 0 ax)
+        (reg:SI 84 [ <retval> ])) "0-main.c":14:1 83 {*movsi_internal}
+     (nil))
+(insn 22 21 0 2 (use (reg/i:SI 0 ax)) "0-main.c":14:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
+;; basic block 1, loop depth 0, maybe hot
+;;  prev block 2, next block (nil), flags: (REACHABLE, RTL, VISITED)
+;;  pred:       2 [always]  (FALLTHRU)
+;;  succ:      
+
+
+
+
+try_optimize_cfg iteration 1
+
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL, VISITED)
+;;  pred:       ENTRY (FALLTHRU)
+(note 3 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:DI 85)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f0ebf26b2d0 *.LC0>)) "0-main.c":12:5 82 {*movdi_internal}
+     (nil))
+(insn 6 5 7 2 (set (reg:DI 5 di)
+        (reg:DI 85)) "0-main.c":12:5 82 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f0ebf26b2d0 *.LC0>)
+        (nil)))
+(call_insn 7 6 8 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("_strlen") [flags 0x41]  <function_decl 0x7f0ebf5ade00 _strlen>) [0 _strlen S1 A8])
+            (const_int 0 [0]))) "0-main.c":12:5 1013 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 8 7 9 2 (set (reg:SI 82 [ _1 ])
+        (reg:SI 0 ax)) "0-main.c":12:5 83 {*movsi_internal}
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 4 si)
+        (reg:SI 82 [ _1 ])) "0-main.c":12:5 discrim 1 83 {*movsi_internal}
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 86)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f0ebf26b360 *.LC1>)) "0-main.c":12:5 discrim 1 82 {*movdi_internal}
+     (nil))
+(insn 11 10 12 2 (set (reg:DI 5 di)
+        (reg:DI 86)) "0-main.c":12:5 discrim 1 82 {*movdi_internal}
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f0ebf26b360 *.LC1>)
+        (nil)))
+(insn 12 11 13 2 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "0-main.c":12:5 discrim 1 85 {*movqi_internal}
+     (nil))
+(call_insn 13 12 14 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f0ebf52fa00 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "0-main.c":12:5 discrim 1 1013 {*call_value}
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (nil)))))
+(insn 14 13 17 2 (set (reg:SI 83 [ _5 ])
+        (const_int 0 [0])) "0-main.c":13:12 83 {*movsi_internal}
+     (nil))
+(insn 17 14 21 2 (set (reg:SI 84 [ <retval> ])
+        (reg:SI 83 [ _5 ])) "0-main.c":14:1 83 {*movsi_internal}
+     (nil))
+(insn 21 17 22 2 (set (reg/i:SI 0 ax)
+        (reg:SI 84 [ <retval> ])) "0-main.c":14:1 83 {*movsi_internal}
+     (nil))
+(insn 22 21 0 2 (use (reg/i:SI 0 ax)) "0-main.c":14:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+

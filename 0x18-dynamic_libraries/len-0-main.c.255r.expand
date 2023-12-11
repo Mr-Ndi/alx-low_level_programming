@@ -1,0 +1,241 @@
+
+;; Function main (main, funcdef_no=6, decl_uid=3722, cgraph_uid=7, symbol_order=6)
+
+int main ()
+{
+  int D.3725;
+  int _1;
+  int _5;
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _1 = _strlen ("My Dyn Lib");
+  printf ("%d\n", _1);
+  _5 = 0;
+;;    succ:       3
+
+;;   basic block 3, loop depth 0
+;;    pred:       2
+<L0>:
+  return _5;
+;;    succ:       EXIT
+
+}
+
+
+
+Partition map 
+
+Partition 1 (_1 - 1 )
+Partition 5 (_5 - 5 )
+Partition 6 (_6(D) - 6 )
+
+
+Coalescible Partition map 
+
+Partition 0, base 0 (_6(D) - 6 )
+
+
+Partition map 
+
+Partition 0 (_6(D) - 6 )
+
+
+Conflict graph:
+
+After sorting:
+Coalesce List:
+
+Partition map 
+
+Partition 0 (_6(D) - 6 )
+
+After Coalescing:
+
+Partition map 
+
+Partition 0 (_1 - 1 )
+Partition 1 (_5 - 5 )
+Partition 2 (_6(D) - 6 )
+
+int main ()
+{
+  int D.3725;
+  int _1;
+  int _5;
+  int _6(D);
+
+;;   basic block 2, loop depth 0
+;;    pred:       ENTRY
+  _1 = _strlen ("My Dyn Lib");
+  printf ("%d\n", _1);
+  _5 = 0;
+;;    succ:       3
+
+;;   basic block 3, loop depth 0
+;;    pred:       2
+<L0>:
+  return _5;
+;;    succ:       EXIT
+
+}
+
+
+
+;; Generating RTL for gimple basic block 2
+
+;; _1 = _strlen ("My Dyn Lib");
+
+(insn 5 4 6 (set (reg:DI 85)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f0ebf26b2d0 *.LC0>)) "0-main.c":12:5 -1
+     (nil))
+
+(insn 6 5 7 (set (reg:DI 5 di)
+        (reg:DI 85)) "0-main.c":12:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f0ebf26b2d0 *.LC0>)
+        (nil)))
+
+(call_insn 7 6 8 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("_strlen") [flags 0x41]  <function_decl 0x7f0ebf5ade00 _strlen>) [0 _strlen S1 A8])
+            (const_int 0 [0]))) "0-main.c":12:5 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+
+(insn 8 7 0 (set (reg:SI 82 [ _1 ])
+        (reg:SI 0 ax)) "0-main.c":12:5 -1
+     (nil))
+
+;; printf ("%d\n", _1);
+
+(insn 9 8 10 (set (reg:SI 4 si)
+        (reg:SI 82 [ _1 ])) "0-main.c":12:5 discrim 1 -1
+     (nil))
+
+(insn 10 9 11 (set (reg:DI 86)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f0ebf26b360 *.LC1>)) "0-main.c":12:5 discrim 1 -1
+     (nil))
+
+(insn 11 10 12 (set (reg:DI 5 di)
+        (reg:DI 86)) "0-main.c":12:5 discrim 1 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f0ebf26b360 *.LC1>)
+        (nil)))
+
+(insn 12 11 13 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "0-main.c":12:5 discrim 1 -1
+     (nil))
+
+(call_insn 13 12 0 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f0ebf52fa00 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "0-main.c":12:5 discrim 1 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (nil)))))
+
+;; _5 = 0;
+
+(insn 14 13 0 (set (reg:SI 83 [ _5 ])
+        (const_int 0 [0])) "0-main.c":13:12 -1
+     (nil))
+
+;; Generating RTL for gimple basic block 3
+
+;; <L0>:
+
+(code_label 15 14 16 2 (nil) [0 uses])
+
+(note 16 15 0 NOTE_INSN_BASIC_BLOCK)
+
+;; return _5;
+
+(insn 17 16 18 (set (reg:SI 84 [ <retval> ])
+        (reg:SI 83 [ _5 ])) "0-main.c":14:1 -1
+     (nil))
+
+(jump_insn 18 17 19 (set (pc)
+        (label_ref 0)) "0-main.c":14:1 -1
+     (nil))
+
+(barrier 19 18 0)
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+Removing jump 18.
+Merging block 5 into block 2...
+Merged blocks 2 and 5.
+Merged 2 and 5 without moving.
+
+
+try_optimize_cfg iteration 2
+
+fix_loop_structure: fixing up loops for function
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, maybe hot
+;;  prev block 0, next block 1, flags: (NEW, REACHABLE, RTL, VISITED)
+;;  pred:       ENTRY (FALLTHRU)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:DI 85)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f0ebf26b2d0 *.LC0>)) "0-main.c":12:5 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:DI 5 di)
+        (reg:DI 85)) "0-main.c":12:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f0ebf26b2d0 *.LC0>)
+        (nil)))
+(call_insn 7 6 8 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("_strlen") [flags 0x41]  <function_decl 0x7f0ebf5ade00 _strlen>) [0 _strlen S1 A8])
+            (const_int 0 [0]))) "0-main.c":12:5 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 8 7 9 2 (set (reg:SI 82 [ _1 ])
+        (reg:SI 0 ax)) "0-main.c":12:5 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 4 si)
+        (reg:SI 82 [ _1 ])) "0-main.c":12:5 discrim 1 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 86)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f0ebf26b360 *.LC1>)) "0-main.c":12:5 discrim 1 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:DI 5 di)
+        (reg:DI 86)) "0-main.c":12:5 discrim 1 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f0ebf26b360 *.LC1>)
+        (nil)))
+(insn 12 11 13 2 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "0-main.c":12:5 discrim 1 -1
+     (nil))
+(call_insn 13 12 14 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f0ebf52fa00 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "0-main.c":12:5 discrim 1 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (nil)))))
+(insn 14 13 17 2 (set (reg:SI 83 [ _5 ])
+        (const_int 0 [0])) "0-main.c":13:12 -1
+     (nil))
+(insn 17 14 21 2 (set (reg:SI 84 [ <retval> ])
+        (reg:SI 83 [ _5 ])) "0-main.c":14:1 -1
+     (nil))
+(insn 21 17 22 2 (set (reg/i:SI 0 ax)
+        (reg:SI 84 [ <retval> ])) "0-main.c":14:1 -1
+     (nil))
+(insn 22 21 0 2 (use (reg/i:SI 0 ax)) "0-main.c":14:1 -1
+     (nil))
+;;  succ:       EXIT [always]  (FALLTHRU)
+
