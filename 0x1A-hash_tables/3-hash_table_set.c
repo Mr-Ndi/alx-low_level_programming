@@ -9,7 +9,7 @@
  * Return: Upon failure - 0.
  *         Otherwise - 1.
  */
-unsigned long int hash_table_set(hash_table_t *ht, const char *key, const char *value)
+int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *new;
 	char *value_copy;
